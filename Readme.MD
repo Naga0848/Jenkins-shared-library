@@ -9,6 +9,6 @@
 
 ![alt text](images/shared-lib.png)
 
-    - from the above image we can understand that line nos 10 and 11 are being called from the jenkinsfile which is in our repo as shown below
+    - from the above image we can understand that line nos 10 and 11 are being called from the jenkinsfile which is in our repo as shown in the below image
 
 ![alt text](images/jenkinsfile.png)    
