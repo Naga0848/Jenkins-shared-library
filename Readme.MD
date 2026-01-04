@@ -18,4 +18,4 @@
 
 ## Integrating jenkins-shared-library in our Jenkins
 
-![alt text](images/Integrating-jenkins-shared-library-in-Jenkins.png)
+![alt text](images/integrating-jenkins-shared-library-in-Jenkins.png)
