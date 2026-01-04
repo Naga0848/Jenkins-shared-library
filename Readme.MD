@@ -13,6 +13,8 @@
 
     - And manam declare chese variables(in jenkins-shared-library) should be same as the values in in our Jenkinsfile
 
+    - In the below image, line nos 8 and 9 indicates that if the branch name is not equal to main, it will trigger the respective NodeJSPipeline(shared-library) otherwise we have to follow the CHANGE REQUEST process for a production release.
+
 ![alt text](images/jenkinsfile.png)  
 
 
