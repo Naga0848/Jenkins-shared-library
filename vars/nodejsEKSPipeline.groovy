@@ -23,9 +23,10 @@ def call(Map configMap){
                 steps {
                     script {
                         def pkgPath = 'catalogue/package.json'
-                        def packageJson = readJSON file: 'package.json'
-                        appVersion = packageJson.version
-                        echo "Package version: ${appVersion}"
+                        def packageJson = readJSON file: pkgPath
+                        def version = packageJson.version
+                        echo "Package version: ${version}"
+                        env.APP_VERSION = version  // Make available to all later stages
                     }
                 }
             }
