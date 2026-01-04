@@ -4,7 +4,7 @@ def call(Map configMap){
             label 'AGENT-1'
         }
         environment { 
-            appVersion = ''
+            APP_VERSION = ''
             REGION = "us-east-1"
             ACC_ID = "324512687633"
             PROJECT = configMap.get('project')
