@@ -22,12 +22,12 @@ def call(Map configMap){
             stage('Read package.json') {
                 steps {
                     script {
-                        def pkgPath = 'catalogue/package.json'
-                        def packageJson = readJSON file: pkgPath
-                        def version = packageJson.version
-                        echo "Package version: ${version}"
-                        env.APP_VERSION = version  // Make available to all later stages
-                    }
+                        // Read package.json and extract version
+                        def packageJson = readJSON file: 'catalogue/package.json'
+                        env.APP_VERSION = packageJson.version
+
+                        echo "Detected application version: ${env.APP_VERSION}"
+                        }
                 }
             }
             stage('Install Dependencies') {
