@@ -21,3 +21,11 @@
 ## Integrating jenkins-shared-library in our Jenkins
 
 ![alt text](images/integrating-jenkins-shared-library-in-Jenkins.png)
+
+
+## Understanding multi branch pipelines
+
+    Like regular job creation, use multi branch option and select the source code location (Git) and mention the exact path where the Jenkinsfile is located.
+
+    Now this Jenkinsfile will trigger the Jenkins shared library which is located in the other repo as mentioned above.
+    Make sure jenkins-shared-library is properly integrated in Manage Jenkins >> Systems >> Global Trusted Pipeline Libraries
