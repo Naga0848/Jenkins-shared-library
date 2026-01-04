@@ -11,4 +11,11 @@
 
     - from the above image we can understand that line nos 10 and 11 are being called from the jenkinsfile which is in our repo as shown in the below image
 
-![alt text](images/jenkinsfile.png)    
+    - And manam declare chese variables(in jenkins-shared-library) should be same as the values in in our Jenkinsfile
+
+![alt text](images/jenkinsfile.png)  
+
+
+## Integrating jenkins-shared-library in our Jenkins
+
+![alt text](images/Integrating-jenkins-shared-library-in-Jenkins.png)
