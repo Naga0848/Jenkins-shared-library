@@ -113,9 +113,9 @@ def call(Map configMap){
                         withAWS(credentials: 'aws-creds', region: 'us-east-1') {
                             sh """
                                 aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com
-                                docker build -t ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion} .
-                                docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
-                                #aws ecr wait image-scan-complete --repository-name ${PROJECT}/${COMPONENT} --image-id imageTag=${appVersion} --region ${REGION}
+                                docker build -t ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${APP_VERSION} .
+                                docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${APP_VERSION}
+                                #aws ecr wait image-scan-complete --repository-name ${PROJECT}/${COMPONENT} --image-id imageTag=${APP_VERSION} --region ${REGION}
                             """
                         }
                         }
@@ -131,7 +131,7 @@ def call(Map configMap){
                                 script: """
                                     aws ecr describe-image-scan-findings \
                                     --repository-name ${PROJECT}/${COMPONENT} \
-                                    --image-id imageTag=${appVersion} \
+                                    --image-id imageTag=${APP_VERSION} \
                                     --region ${REGION} \
                                     --output json
                                 """,
@@ -166,7 +166,7 @@ def call(Map configMap){
                         //build job: 'catalogue-cd',
                         build job: 'catalogue-deployment',
                         parameters: [
-                            string(name: 'appVersion', value: "${appVersion}"),
+                            string(name: 'APP_VERSION', value: "${APP_VERSION}"),
                             string(name: 'deploy_to', value: 'dev')
                         ],
                         propagate: false,  // even SG fails VPC will not be effected
