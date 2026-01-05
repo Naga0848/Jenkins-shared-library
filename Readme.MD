@@ -1,6 +1,6 @@
 ## this repo will have the Jenkins shared library related files for different programing languages
 
-
+![alt text](images/shared-lib-diagram.png)
 
 ## Understanding Jenkinsfile and its corresponding Jenkins-shared-library structures
 
