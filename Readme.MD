@@ -29,3 +29,8 @@
 
     Now this Jenkinsfile will trigger the Jenkins shared library which is located in the other repo as mentioned above.
     Make sure jenkins-shared-library is properly integrated in Manage Jenkins >> Systems >> Global Trusted Pipeline Libraries
+
+
+![alt text](images/jenkinsfile-limitations.png)  
+
+    From the above image, we can understand that we have to use the mutli-branch pipelines when we are using multiple branches in Git and also use the above mentioned script in Jenkinsfile
